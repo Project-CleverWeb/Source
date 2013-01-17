@@ -16,8 +16,8 @@ This is the source for the framework of Project CleverWeb. The intentions of thi
 **Notices :**  
 - Some text is abbreviated, and may not be what you expect. Please see the section below called "Abbreviations" for a guide as to what some abbreviations mean.  
 &nbsp;  
-##Abbreviations##
-**Informarion:** This section will likely be updated fairly often, however not constantly. It would be a good idea to check this section between upgrades for new content.
+##Abbreviations##  
+**Information:** This section will likely be updated fairly often, however not constantly. It would be a good idea to check this section between upgrades for new content.
 &nbsp;  
 &nbsp;  
 - **org** = *The original or organic, may refer to a file or element within a document. The idea being that whatever is being refered to is a starting point.*
