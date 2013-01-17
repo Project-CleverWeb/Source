@@ -1,0 +1,8 @@
+[27-Aug-2012 22:30:05 UTC] PHP Fatal error:  Interface 'knowledge' not found in /home/teamcw/public_html/cleverweb/core/errors/cw_error_handler.php on line 3
+[27-Aug-2012 23:28:10 UTC] PHP Parse error:  syntax error, unexpected T_ECHO in /home/teamcw/public_html/cleverweb/core/errors/cw_error_handler.php on line 45
+[28-Aug-2012 02:06:21 UTC] PHP Parse error:  syntax error, unexpected T_STRING in /home/teamcw/public_html/cleverweb/core/errors/cw_error_handler.php on line 180
+[28-Aug-2012 02:06:32 UTC] PHP Parse error:  syntax error, unexpected T_STRING in /home/teamcw/public_html/cleverweb/core/errors/cw_error_handler.php on line 180
+[28-Aug-2012 02:16:56 UTC] PHP Fatal error:  Call to undefined function isseet() in /home/teamcw/public_html/cleverweb/core/errors/cw_error_handler.php on line 60
+[28-Aug-2012 02:24:24 UTC] PHP Fatal error:  Cannot redeclare indentnum() (previously declared in /home/teamcw/public_html/cleverweb/core/errors/cw_error_handler.php:63) in /home/teamcw/public_html/cleverweb/core/errors/cw_error_handler.php on line 63
+[29-Aug-2012 17:32:17 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 51015681 bytes) in /home/teamcw/public_html/cleverweb/core/errors/cw_error_handler.php on line 87
+[29-Aug-2012 17:32:36 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 51015681 bytes) in /home/teamcw/public_html/cleverweb/core/errors/cw_error_handler.php on line 87

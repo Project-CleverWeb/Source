@@ -1,0 +1,87 @@
+
+RewriteEngine on
+SetEnv SERVER_ADMIN admin@projcleverweb.com
+
+<files .htaccess="">
+order allow,deny
+deny from all
+</files>
+
+Options All -Indexes
+
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www.projcleverweb.com$ [NC]
+RewriteRule ^(.*)$ http://projcleverweb.com/$1 [R=301,L]
+
+RewriteBase /
+
+# 1 YEAR
+<FilesMatch "\.(ico|pdf|flv)$">
+Header set Cache-Control "max-age=29030400, public"
+</FilesMatch>
+# 1 WEEK
+<FilesMatch "\.(jpg|jpeg|png|gif|swf)$">
+Header set Cache-Control "max-age=604800, public"
+</FilesMatch>
+# 2 DAYS
+<FilesMatch "\.(txt|css|js)$">
+Header set Cache-Control "max-age=172800, proxy-revalidate"
+</FilesMatch>
+# 1 MIN
+<FilesMatch "\.(xml|html|htm|php)$">
+Header set Cache-Control "max-age=60, private, proxy-revalidate"
+</FilesMatch>
+
+RewriteRule ^(([^/]+/)*[^.]+)$ /$1.php [L]
+
+
+SetEnvIfNoCase user-Agent ^FrontPage [NC,OR]
+SetEnvIfNoCase user-Agent ^Java.* [NC,OR]
+SetEnvIfNoCase user-Agent ^Microsoft.URL [NC,OR]
+SetEnvIfNoCase user-Agent ^MSFrontPage [NC,OR]
+SetEnvIfNoCase user-Agent ^Offline.Explorer [NC,OR]
+SetEnvIfNoCase user-Agent ^[Ww]eb[Bb]andit [NC,OR]
+SetEnvIfNoCase user-Agent ^Zeus [NC]
+<limit get="" post="" head="">
+Order Allow,Deny
+Allow from all
+Deny from env=bad_bot
+</limit>
+
+ErrorDocument 503 /index.php?err=503
+ErrorDocument 502 /index.php?err=502
+ErrorDocument 505 /index.php?err=505
+ErrorDocument 401 /index.php?err=401
+ErrorDocument 500 /index.php?err=500
+ErrorDocument 301 /index.php?err=301
+ErrorDocument 403 /index.php?err=403
+ErrorDocument 400 /index.php?err=400
+ErrorDocument 408 /index.php?err=408
+ErrorDocument 501 /index.php?err=501
+ErrorDocument 302 /index.php?err=302
+ErrorDocument 405 /index.php?err=405
+ErrorDocument 415 /index.php?err=415
+ErrorDocument 404 /index.php?err=404
+ErrorDocument 504 /index.php?err=504
+
+
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http://admin.projcleverweb.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://admin.projcleverweb.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://help.projcleverweb.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://help.projcleverweb.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://login.projcleverweb.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://login.projcleverweb.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://projcleverweb.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://projcleverweb.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.admin.projcleverweb.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.admin.projcleverweb.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.help.projcleverweb.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.help.projcleverweb.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.login.projcleverweb.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.login.projcleverweb.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.projcleverweb.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.projcleverweb.com$      [NC]
+RewriteRule .*\.(jpg|jpeg|gif|png|bmp)$ http://projcleverweb.com/home.php [R,NC]
+
+AddType application/x-httpd-php .clever .cw .nav

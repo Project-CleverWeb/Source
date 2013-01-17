@@ -1,0 +1,45 @@
+USE
+
+GET INFO:
+
+php_browser_info() - returns array of all info
+get_browser_name() - returns just the name
+get_browser_version() - returns version and minor version (3.2)
+
+CONDITIONAL STATEMENTS INCLUDED:
+
+$version is optional. Include a number to test a specific one, or leave blank to test any for any version.
+
+is_firefox ($version)
+is_safari ($version)
+is_chrome ($version)
+is_opera ($version)
+is_IE ($version)
+
+is_iphone ($version)
+is_ipad ($version)
+is_ipod ($version)
+
+is_mobile ()
+
+is_IE6 ()
+is_IE7 ()
+
+is_lt_IE6 ()
+is_lt_IE7 ()
+is_lt_IE8 ()
+
+browser_supports_javascript()
+browser_supports_cookies()
+browser_supports_css()
+
+
+EXAMPLE:
+
+if (is_IE()) :  DO SOMETHING ; else :  DO OTHER STUFF; endif; 
+
+OR GET ALL INFO:
+
+$browserInfo = php_browser_info();
+
+returns array of all browser info.

@@ -1,0 +1,18 @@
+/*******START CLEVERWEB NOTES*******/
+>>'CleverWeb' and all alternate spellings, including those that have a deference of capitalization, is in reference of the authors as well as the work of '(The) CleverWeb Project,' 'Project CleverWeb,' and 'CleverWeb.'
+>>All files included with CleverWeb that are not mentioned here are covered by the GNU General Public License Version 3 for CleverWeb.
+>>A copy of the GNU General Public License Version 3 can be found here: http://www.gnu.org/licenses/gpl-3.0.html
+>>All official distributed copies are only found at http://cleverweb.comeze.com OR http://projcleverweb.com.
+>>If you believe a file not mentioned here but included in CleverWeb is your original work, IMMEDIATELY send an email including your original file and what changes (if any) were made to 'projcleverweb@gmail.com.'
+>>If it can be verified by both CleverWeb and a publically recognized and non-bias third party that a work in CleverWeb is an original work, but not an original work of CleverWeb, the work will be removed immediately from the most recent official distributed copy of CleverWeb.
+>>Any verified original work, as mentioned above on line 7, which is removed from the most recent official distributed copy of CleverWeb, will not be removed from prior versions without court order.
+>>An 'Author' is a reference to either the original authors name or their company or to whoever was cited in the work.
+>>An 'Authors Work' is a reference to a file included in CleverWeb.
+>>The 'Location' is a reference to the file location relative to the 'cleverweb' folder, to the Authors Work.
+>>Authors are mentioned as 'Author' - 'Authors Work' - 'Location'
+>>An Authors Work may contain a note and or comment from CleverWeb, however will not contain any undocumented changes.
+>>Any changes to an Authors Work will be documented at the top of a file in a labeled comment or note section.
+>>All cites included remain unchanged in an Authors Work.
+/*******END CLEVERWEB NOTES*******/
+
+Marty Thornley - browser_detect.php - "/core/general/"
