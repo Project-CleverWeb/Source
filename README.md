@@ -1,0 +1,23 @@
+# Project CleverWeb Source (codename: CleverWeb) #
+
+**Description :**  
+This is the source for the framework of Project CleverWeb. The intentions of this project are detailed in the quote below.
+  
+> Project CleverWeb is a "Non-Invasive CMS Framework, UI and Library" designed to be easy for both end-users and developers to understand and use. The original plans for Project CleverWeb, detail that, "It should be easy enough to use, that anyone who can make a social-networking profile, can make their own site using CleverWeb. Additionally, if a developer wants only use CleverWeb's framework and library without the CMS UI, it should not only be both possible and easy, but neither the framework or the library should take up the common name-spaces for function names. This would allow CleverWeb to be very easy to integrate into procedural based systems."  
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Nicholas Jordon&nbsp;&nbsp;|&nbsp;&nbsp;Founder of the project
+
+&nbsp;    
+
+----------
+
+
+
+##Various Information##
+**Notices :**  
+- Some text is abbreviated, and may not be what you expect. Please see the section below called "Abbreviations" for a guide as to what some abbreviations mean.  
+&nbsp;  
+##Abbreviations##
+This section will likely be updated fairly often, however not constantly. It would be a good idea to check this section between upgrades for new content.
+&nbsp;  
+&nbsp;  
+- **org** = *The original or organic, may refer to a file or element within a document. The idea being that whatever is being refered to is a starting point.*
