@@ -21,16 +21,16 @@ The entire CleverWeb system, is designed to use this global array instead of pop
 
 ##Various Information##
 **Codex :**  
-[docs.projectcleverweb.com/codex.php](http://docs.projectcleverweb.com/codex.php)
+[docs.projectcleverweb.com/codex.php](http://docs.projectcleverweb.com/codex.php) (Work in progress)
 
 **Contact Us :**  
 git@projectcleverweb.com
 
 **ETA's :**  
-Forget they exist
+Forget they existhttps://github.com/Project-CleverWeb/Source#abbreviations
 
 **Notices :**  
-- Some text is abbreviated, and may not be what you expect. Please see the section below called "Abbreviations" for a guide as to what some abbreviations mean.  
+- Some text is abbreviated, and may not be what you expect. Please see the section below called "[Abbreviations](#abbreviations)" for a guide as to what some abbreviations mean.  
 
 
 ##Abbreviations##
