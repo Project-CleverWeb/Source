@@ -27,7 +27,7 @@ The entire CleverWeb system, is designed to use this global array instead of pop
 git@projectcleverweb.com
 
 **ETA's :**  
-Forget they existhttps://github.com/Project-CleverWeb/Source#abbreviations
+Forget they exist
 
 **Notices :**  
 - Some text is abbreviated, and may not be what you expect. Please see the section below called "[Abbreviations](#abbreviations)" for a guide as to what some abbreviations mean.  
