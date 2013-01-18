@@ -136,11 +136,20 @@ $_CW['settings']['mysql']['host'] = $MySQL_Host;
 $_CW['settings']['mysql']['name'] = $MySQL_Name;
 $_CW['settings']['mysql']['user'] = $MySQL_Username;
 $_CW['settings']['mysql']['pass'] = $MySQL_Password;
+$_CW['db']['conn'] = new mysqli(
+	$MySQL_Host,
+	$MySQL_Name,
+	$MySQL_Username,
+	$MySQL_Password
+);
 unset($MySQL_Host,$MySQL_Name,$MySQL_Password,$MySQL_Username);
 // pass over to mysqli handler
 
-
-// find CW core
+// find CW core, we should only need to do this once, so no functions.
+if(empty($_CW['path'])){
+	$_CW['path'] = '.';
+}
+$_CW['path'] = (string) $_CW['path'];
 $_CW['temp'] = array(
 	$_CW['path'], // search here first
 	'cleverweb','CleverWeb','cw','CW','clever','core','cms','CMS'
@@ -183,16 +192,22 @@ foreach ($_CW['temp'] as $_CW['arrayvalue']) {
 			break;
 		}
 	}
+	
 	if($_CW['tempcount']==$_CW['i']){
+		// check the last place on earth, the cwip.php should not be here.
+		if(file_exists('.'.DS.'cwid.php')){
+			include_once __DIR__.DS.$_CW['arrayvalue'].DS.'cwid.php';
+			if(defined('cw_core_exists') && cw_core_exists===TRUE){
+				break;
+			}
+		}
 		// We tried our hardest and failed... time to break the bad news.
 		exit('CW Error: The core could not be found! Please check $_CW[\'path\'] in your settings.php file');
 	}
 }
-unset($_CW['temp'],$_CW['arrayvalue'],$_CW['i'],$_CW['tempcount']);
+unset($_CW['temp'],$_CW['arrayvalue'],$_CW['i'],$_CW['tempcount']); // little clean up
 // END find CW core
 
-
-// gen securtity keys if they don't exist in the database
 /**
  * MySQLi tables list:
  * 	Settings
@@ -201,4 +216,6 @@ unset($_CW['temp'],$_CW['arrayvalue'],$_CW['i'],$_CW['tempcount']);
  * 	Forum Threads
  * 	comments (non forum)
  */
+
+// gen securtity keys if they don't exist in the database
 
