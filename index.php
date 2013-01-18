@@ -1,26 +1,9 @@
 <?php
-// This file is only for making 
-
-/**
- * Make invisible
- */
-
-
-echo "<pre>";
-
-
-
-
-if($_SERVER['REQUEST_URI']==$_SERVER['SCRIPT_NAME']){
-	// 404
-}
-else{
-	// 403
-}
-
-
-header("HTTP/1.1 500 Internal Server Error");
-print_r($_SERVER);
-
-
-?>
+include __DIR__.'/settings.php';
+cleverweb::init(
+	array( // these args will override settings.php's values
+		'debug_level'=>5, // 0 means we see nothing, 5 means we see every possible error; use your imaginiation for 1-4
+		'enviroment' => 'development', // accepts production, development, maintenance
+		'index_path' => __DIR__
+	)
+);
