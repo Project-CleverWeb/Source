@@ -193,5 +193,12 @@ unset($_CW['temp'],$_CW['arrayvalue'],$_CW['i'],$_CW['tempcount']);
 
 
 // gen securtity keys if they don't exist in the database
+/**
+ * MySQLi tables list:
+ * 	Settings
+ * 	Users
+ * 	Posts
+ * 	Forum Threads
+ * 	comments (non forum)
+ */
 
-?>
