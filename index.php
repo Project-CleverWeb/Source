@@ -6,4 +6,4 @@ cleverweb::init(
 		'enviroment' => 'development', // accepts production, development, maintenance
 		'index_path' => __DIR__
 	)
-);
+); 
