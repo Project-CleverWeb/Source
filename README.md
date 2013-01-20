@@ -32,6 +32,8 @@ Forget they exist
 **Notices :**  
 - Some text is abbreviated, and may not be what you expect. Please see the section below called "[Abbreviations](#abbreviations)" for a guide as to what some abbreviations mean.  
 
+**Warnings :**  
+- None (yet)
 
 ##Abbreviations##
 **Information:** This section will likely be updated fairly often, however not constantly. It would be a good idea to check this section between upgrades for new content.
