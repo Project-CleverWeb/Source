@@ -14,7 +14,10 @@ This is the source for the framework of Project CleverWeb. The intentions of thi
 &nbsp;    
 
 ##Updates##
-Most informational aspects (such us the codex or this readme) will be updated as full versions are released. Requests for ETA's on versions or update will be ignored entirely.
+Most informational aspects (such us the codex or this readme) will be updated as full versions are released. Requests for ETA's on versions or update will be ignored entirely.  
+
+##Installation##
+Coming Soon  
 
 ##The $_CW global array##
 The entire CleverWeb system, is designed to use this global array instead of populating random globals with information. This allows information to be neatly organized withing the CleverWeb system, and also prevents CleverWeb from interfearing with other scripts or systems. This array is broken down into logical english to help prevent "mixups" and misunderstandings. Instead of using print_r() or var_dump() directly on on $_CW, it is recommended that you instead put the global into array_keys() before printing. Additionally, there should be no need to print this global, as it should be well documented on [our site](http://projectcleverweb.com), once a version is complete.
