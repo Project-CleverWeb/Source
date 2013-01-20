@@ -1,4 +1,4 @@
 <?php
 /**
- * Send to fake 404
+ * Send to fake 404 [comeback]
  */

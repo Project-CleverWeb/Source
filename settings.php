@@ -123,15 +123,16 @@ _define('DS',DIRECTORY_SEPARATOR, '/'); // Shorter name for the php constant DIR
 _define('EOL', PHP_EOL); // Shorter name for the php constant PHP_EOL (End of line);
 _define('REQUEST_URL', trim($_GET['url'],'/')); // Get the requested URL for parsing later.
 
-_define('ROOT', dirname(dirname(__FILE__))); // Folder containing the '/public/' folder
-_define('LIB', ROOT . DS . 'library'); // Library Folder
-_define('CONF', ROOT . DS . 'configs'); // Configs Folder
-
 _define('REQUEST_METHOD', $_SERVER['REQUEST_METHOD']);
 _define('IS_POST', (REQUEST_METHOD === 'POST'));
 _define('IS_GET', (REQUEST_METHOD === 'GET'));
 
+// this section is not ready
+_define('ROOT', dirname(dirname(__FILE__))); // Folder containing the '/public/' folder
+_define('LIB', ROOT . DS . 'library'); // Library Folder
+_define('CONF', ROOT . DS . 'configs'); // Configs Folder
 
+// this part may see some cleanup and/or moving
 $_CW['settings']['mysql']['host'] = $MySQL_Host;
 $_CW['settings']['mysql']['name'] = $MySQL_Name;
 $_CW['settings']['mysql']['user'] = $MySQL_Username;
@@ -143,11 +144,19 @@ $_CW['db']['conn'] = new mysqli(
 	$MySQL_Password
 );
 unset($MySQL_Host,$MySQL_Name,$MySQL_Password,$MySQL_Username);
+/**
+ * MySQLi tables list:
+ * 	Settings
+ * 	Users
+ * 	Posts
+ * 	Forum Threads
+ * 	comments (non forum)
+ */
 // pass over to mysqli handler
 
 // find CW core, we should only need to do this once, so no functions.
 if(empty($_CW['path'])){
-	$_CW['path'] = '.';
+	$_CW['path'] = '.'; // allow 'default' as the file name
 }
 $_CW['path'] = (string) $_CW['path'];
 $_CW['temp'] = array(
@@ -173,21 +182,21 @@ foreach ($_CW['temp'] as $_CW['arrayvalue']) {
 	}
 	// check above
 	elseif(file_exists(__DIR__.DS.'..'.DS.$_CW['arrayvalue'].DS.'cwid.php')){
-		include_once __DIR__.DS.$_CW['arrayvalue'].DS.'cwid.php';
+		include_once     __DIR__.DS.'..'.DS.$_CW['arrayvalue'].DS.'cwid.php';
 		if(defined('cw_core_exists') && cw_core_exists===TRUE){
 			break;
 		}
 	}
 	// check way above
 	elseif(file_exists(__DIR__.DS.'..'.DS.'..'.DS.$_CW['arrayvalue'].DS.'cwid.php')){
-		include_once __DIR__.DS.$_CW['arrayvalue'].DS.'cwid.php';
+		include_once     __DIR__.DS.'..'.DS.'..'.DS.$_CW['arrayvalue'].DS.'cwid.php';
 		if(defined('cw_core_exists') && cw_core_exists===TRUE){
 			break;
 		}
 	}
 	// check the heavens
 	elseif(file_exists(DS.$_CW['arrayvalue'].DS.'cwid.php')){
-		include_once __DIR__.DS.$_CW['arrayvalue'].DS.'cwid.php';
+		include_once     DS.$_CW['arrayvalue'].DS.'cwid.php';
 		if(defined('cw_core_exists') && cw_core_exists===TRUE){
 			break;
 		}
@@ -196,7 +205,7 @@ foreach ($_CW['temp'] as $_CW['arrayvalue']) {
 	if($_CW['tempcount']==$_CW['i']){
 		// check the last place on earth, the cwip.php should not be here.
 		if(file_exists('.'.DS.'cwid.php')){
-			include_once __DIR__.DS.$_CW['arrayvalue'].DS.'cwid.php';
+			include_once '.'.DS.'cwid.php';
 			if(defined('cw_core_exists') && cw_core_exists===TRUE){
 				break;
 			}
@@ -208,14 +217,7 @@ foreach ($_CW['temp'] as $_CW['arrayvalue']) {
 unset($_CW['temp'],$_CW['arrayvalue'],$_CW['i'],$_CW['tempcount']); // little clean up
 // END find CW core
 
-/**
- * MySQLi tables list:
- * 	Settings
- * 	Users
- * 	Posts
- * 	Forum Threads
- * 	comments (non forum)
- */
+
 
 // gen securtity keys if they don't exist in the database
 
