@@ -1,1 +1,1 @@
-<?php //NOT YET BUILT ?>
+<?php //This file may not be needed, it may be a better idea to place it in ../docs/? ?>
