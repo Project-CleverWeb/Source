@@ -7,12 +7,28 @@ This is the source for the framework of Project CleverWeb. The intentions of thi
 > Project CleverWeb is a "Non-Invasive CMS Framework, UI and Library" designed to be easy for both end-users and developers to understand and use. The original plans for Project CleverWeb, detail that, "It should be easy enough to use, that anyone who can make a social-networking profile, can make their own site using CleverWeb. Additionally, if a developer wants only use CleverWeb's framework and library without the CMS UI, it should not only be both possible and easy, but neither the framework or the library should take up the common name-spaces for function names. This would allow CleverWeb to be very easy to integrate into procedural based systems."  
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Nicholas Jordon&nbsp;&nbsp;|&nbsp;&nbsp;Founder of the project
   
+Project CleverWeb is designed to be neat and organized, while providing as much optimization and features as possible. One way is by throwing commonly used items into variables, or if you want to make things complex & dynamic, why not preload you links with some useful information.  
+  
 ``` php
 <?php // good ?>
-<a href="<?php the_permalink(); ?>" rel="follow" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+<div>
+	<a
+		href="<?php the_permalink(); ?>"
+		rel="follow"
+		title="<?php the_title_attribute(); ?>"
+		target="_blank"
+	><?php the_title(); ?></a>
+</div>
 
 <?php // better ?>
-<a href="<?php echo $_CW['blog']['post_url']; ?>" rel="follow" title="<?php echo $_CW['blog']['post_title']; ?>"><?php the_title(); ?></a>
+<div>
+	<a
+		href="<?php echo $_CW['blog']['post']['url']; ?>"
+		rel="follow" 
+		title="<?php echo $_CW['blog']['post']['title_attribute']; ?>"
+		target="_blank"
+	><?php echo $_CW['blog']['post']['title']; ?></a>
+</div>
 
 <?php
 // now we are talking
@@ -32,7 +48,6 @@ blog::post_link(TRUE , // echo
 );
 ?>
 ```  
-Project CleverWeb is designed to be neat and organized, while providing as much optimization and features as possible. One way is by throwing commonly used items into variables, or if you want to make things complex & dynamic, why not preload you links with some useful information.
 
 &nbsp;    
 
