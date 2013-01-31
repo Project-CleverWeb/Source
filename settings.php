@@ -133,15 +133,11 @@ _define('LIB', ROOT . DS . 'library'); // Library Folder
 _define('CONF', ROOT . DS . 'configs'); // Configs Folder
 
 // this part may see some cleanup and/or moving
-$_CW['settings']['mysql']['host'] = $MySQL_Host;
-$_CW['settings']['mysql']['name'] = $MySQL_Name;
-$_CW['settings']['mysql']['user'] = $MySQL_Username;
-$_CW['settings']['mysql']['pass'] = $MySQL_Password;
 $_CW['db']['conn'] = new mysqli(
-	$MySQL_Host,
-	$MySQL_Name,
-	$MySQL_Username,
-	$MySQL_Password
+	(string) $MySQL_Host,
+	(string) $MySQL_Name,
+	(string) $MySQL_Username,
+	(string) $MySQL_Password
 );
 unset($MySQL_Host,$MySQL_Name,$MySQL_Password,$MySQL_Username);
 /**
@@ -180,6 +176,14 @@ foreach ($_CW['temp'] as $_CW['arrayvalue']) {
 			break;
 		}
 	}
+	elseif($_CW['i']==1){
+		if(file_exists(__DIR__.DS.'cwid.php')){
+			include_once __DIR__.DS.'cwid.php';
+			if(defined('cw_core_exists') && cw_core_exists===TRUE){
+				break;
+			}
+		}
+	}
 	// check above
 	elseif(file_exists(__DIR__.DS.'..'.DS.$_CW['arrayvalue'].DS.'cwid.php')){
 		include_once     __DIR__.DS.'..'.DS.$_CW['arrayvalue'].DS.'cwid.php';
@@ -207,6 +211,7 @@ foreach ($_CW['temp'] as $_CW['arrayvalue']) {
 		if(file_exists('.'.DS.'cwid.php')){
 			include_once '.'.DS.'cwid.php';
 			if(defined('cw_core_exists') && cw_core_exists===TRUE){
+				// Trigger warning for having it in an unsecure place
 				break;
 			}
 		}

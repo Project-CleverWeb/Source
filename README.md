@@ -20,18 +20,8 @@ Project CleverWeb is designed to be neat and organized, while providing as much 
 	><?php the_title(); ?></a>
 </div>
 
-<?php // better ?>
-<div>
-	<a
-		href="<?php echo $_CW['blog']['post']['url']; ?>"
-		rel="follow" 
-		title="<?php echo $_CW['blog']['post']['title_attribute']; ?>"
-		target="_blank"
-	><?php echo $_CW['blog']['post']['title']; ?></a>
-</div>
-
 <?php
-// now we are talking
+// better
 blog::post_link(TRUE , // echo
 	array( // args array
 		'wrap_tag' => 'div'
