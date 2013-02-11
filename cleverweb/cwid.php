@@ -9,8 +9,8 @@
 
 // make sure this file isn't being accessed directly from browser
 if(isset($_CW) && function_exists('_define')){
-	_define('cw_core_exists',TRUE);
-	$_CW['path'] = __DIR__;
+	_define('CW_CORE_EXISTS',TRUE);
+	$_CW->preinit['path'] = __DIR__;
 	return;
 }
 else{
