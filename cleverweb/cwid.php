@@ -9,9 +9,14 @@
 
 // make sure this file isn't being accessed directly from browser
 if(isset($_CW) && function_exists('_define')){
-	_define('CW_CORE_EXISTS',TRUE);
-	$_CW->preinit['path'] = __DIR__;
-	return;
+	if(!defined('CW_CORE_EXISTS')){
+		_define('CW_CORE_EXISTS',TRUE);
+		$_CW->preinit['path'] = __DIR__;
+	}
+	
+	// trigger error if included 2+ times?
+	
+	return; // send back to the including file
 }
 else{
 	// point to error page (not yet defined [comeback])

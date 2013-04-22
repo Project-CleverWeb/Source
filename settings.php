@@ -132,10 +132,12 @@ function _define($name, $default_value, $development_value=NULL){
 		if(defined($name)){
 			trigger_error('Previously Defined Constant: ' . $name, E_USER_WARNING);
 			return FALSE;
-		}else{
+		}
+		else{
 			if(($_CW->enviroment == 'production') || ($_CW->enviroment == 'maintenance') || is_null($development_value)){
 				define($name, $default_value);
-			}else{
+			}
+			else{
 				define($name, $development_value);
 			}
 		}
@@ -144,10 +146,12 @@ function _define($name, $default_value, $development_value=NULL){
 		if(defined($name)){
 			trigger_error('Previously Defined Constant: ' . $name, E_USER_WARNING);
 			return FALSE;
-		}else{
+		}
+		else{
 			if(($_CW->preinit['enviroment'] == 'production') || ($_CW->preinit['enviroment'] == 'maintenance') || is_null($development_value)){
 				define($name, $default_value);
-			}else{
+			}
+			else{
 				define($name, $development_value);
 			}
 		}

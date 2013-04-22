@@ -14,7 +14,7 @@ This is the source for the framework of Project CleverWeb. The intentions of thi
 
 &nbsp;    
 ##Comparing with other CMS's##
-While this project will have many elements that are unique to it, we want to make sure things can be learned quickly and easily. As a start, everything will be bundled into the variable [$_CW](#the-_cw-global-variable) for easy access. At the same time, CleverWeb operates in modules, while some are required, many are able to be dropped or added as needed. This use of modules also allows CleverWeb to dynamically load modules as they are needed; rather than the typical system of "load it regardless."  
+While this project will have many elements that are unique to it, we want to make sure things can be learned quickly and easily. As a start, everything will be bundled into the variable [$_CW](#the-_cw-global-variable) for easy access. At the same time, CleverWeb operates in modules, while some are required, many are able to be dropped or added as needed. This use of modules also allows CleverWeb to dynamically load modules as they are needed; rather than the typical system of "load it regardless." Further more, CleverWeb will be using a [system of scopes](#scopes) to disable/enable various scripts. This keeps things like plugins and themes, from messing with each other.
   
 
 
@@ -29,8 +29,8 @@ Releases will use the following format:
   
 `<major>.<minor>.<patch> <codename>`  
   
-**Example 1: **0.1.0 Pre-Alpha  
-**Example 2: **13.4.58 Beef-Nugget  
+* **Example 1:** 0.1.0 Pre-Alpha  
+* **Example 2:** 13.4.58 Beef-Nugget  
   
 Versions will be constructed with the following guidelines:  
   
@@ -41,8 +41,13 @@ Versions will be constructed with the following guidelines:
 For more information on SemVer, please visit [semver.org](http://semver.org/).  
   
 ##The $_CW global variable##
-The entire CleverWeb system, is designed to use this global variable (as an stdClass) instead of populating random globals with information. This allows information to be neatly organized withing the CleverWeb system, and also prevents CleverWeb from interfearing with other scripts or systems. This stdClass is broken down into logical english to help prevent "mixups" and misunderstandings. There should be no need to print this global, as it should be well documented on [our site](http://projectcleverweb.com), once the first major version is complete.
-
+The entire CleverWeb system, is designed to use this global variable (as an stdClass) instead of populating random globals with information. This allows information to be neatly organized withing the CleverWeb system, and also prevents CleverWeb from interfearing with other scripts or systems. This stdClass is broken down into logical english to help prevent "mixups" and misunderstandings. There should be no need to print this global, as it should be well documented on [our site](http://projectcleverweb.com), once the first major version is complete.  
+  
+##Scopes##
+Scopes in Project CleverWeb, are basically a secondary permissions system, that keeps the balance of power. For example, plugins will have access to some scripts that themes wont. Additionally there are script that can only be accessed by themes, and some scripts are only availible to CleverWeb internals.
+  
+This system is nested within the init class, and [protected]() in a way that prevents other scripts from using it.
+  
 ##Various Information##
 **Codex :**  
 [docs.projectcleverweb.com/codex.php](http://docs.projectcleverweb.com/codex.php) (Work in progress)
