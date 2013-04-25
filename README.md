@@ -45,7 +45,7 @@ The entire CleverWeb system, is designed to use this global variable (as an stdC
 ##Scopes##
 Scopes in Project CleverWeb, are basically a secondary permissions system, that keeps the balance of power. For example, plugins will have access to some scripts that themes wont. Additionally there are script that can only be accessed by themes, and some scripts are only availible to CleverWeb internals.
   
-This system is nested within the init class, and [protected]() in a way that prevents other scripts from using it.
+This system is nested within the init class, and [protected](http://php.net/manual/en/language.oop5.visibility.php) in a way that prevents other scripts from using it.
   
 ##Various Information##
 **Codex :**  

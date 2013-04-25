@@ -1,4 +1,62 @@
-#This will contain the style guide#
+#Style Guide#
+
+** Description **
+
+###IDE's &amp; Operating Systems###
+**Rules**
+
+* Any IDE, is acceptable, except Adobe Dreamweaver. Developers caught using Dreamweaver will be forced to use notepad for a week. The only alternative punishment is being shot with rock-salt.
+* Any OS is acceptable, and
+
+**Why**
+
+* 
+
+###Spacing###
+**Rules**
+
+* All spacing is done in tabs. Scripts not spaced properly, MUST be re-written correctly.
+* recommended tab width: 2
+
+**Why**
+
+* 
+
+###-###
+**Rules**
+
+* 
+
+**Why**
+
+* 
+
+###-###
+**Rules**
+
+* 
+
+**Why**
+
+* 
+
+###-###
+**Rules**
+
+* 
+
+**Why**
+
+* 
+
+###-###
+**Rules**
+
+* 
+
+**Why**
+
+* 
 
 Short Version:
 
@@ -6,7 +64,7 @@ Short Version:
 * recommended tab width: 2
 * Underscores not CamelCase
 * ALL file names must use [a-z0-9_-] NO uppercase letters
-* classes with dedicated files must use "&gt;class-name&lt;.class.php"
+* classes with dedicated files must use `&lt;class-name&gt;.class.php`
 * comment blocks have a 100 character soft-limit
 * when including/requiring files, path must be absolute
 * When handling paths (other than URLs) you must always use DS
