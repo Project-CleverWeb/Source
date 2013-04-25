@@ -15,7 +15,7 @@ class cleverweb implements versions {
 // begin
 session_start();
 
-switch($_CW->preint['debug_level']){
+switch($_CW->preinit['debug_level']){
 	case 0: // No error reporting from PHP or CleverWeb (not recommended)
 	case 1: // Only CleverWeb errors are shown, but they are only shown to admins. (production enviroment recommended)
 		error_reporting(0);
@@ -29,10 +29,10 @@ switch($_CW->preint['debug_level']){
 		error_reporting(-1);
 		break;
 	default: // same as "level 1'
-	$_CW->preint['debug_level']=1;
+	$_CW->preinit['debug_level']=1;
 		error_reporting(0);
 }
-define("CW_DEBUG_LEVEL",$_CW->preint['debug_level'],TRUE);
+define("CW_DEBUG_LEVEL",$_CW->preinit['debug_level'],TRUE);
 
 class init implements versions{
 	

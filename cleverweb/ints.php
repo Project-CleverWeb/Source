@@ -7,10 +7,4 @@ interface versions{
 	const VER_minor = "01";
 	const VER_codename = "Pre-Alpha";
 	const VER_patch = "";
-	const VER_fullname =
-		self:VER_name.' '.
-		self:VER_major.'.'.
-		self:VER_minor.' '.
-		self:VER_codename
-	;
 }

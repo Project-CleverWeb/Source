@@ -53,7 +53,7 @@ $MySQL_Host = "default";
  */
 
 // Initializing $_CW as an stdClass (This preps it to be used in the core)
-$_CW = stdClass; // Do not touch
+$_CW = new stdClass; // Do not touch
 $_CW->preinit = array();// Do not touch
 
 // Searchs common directory names, this directory, and the directory above this one, if the core is not at this location.
@@ -128,7 +128,7 @@ function _define($name, $default_value, $development_value=NULL){
 	global $_CW;
 	$name = (string) $name;
 	// Check if CW has started init
-	if(CW_CORE_INIT==true){
+	if(defined('CW_CORE_INIT') && CW_CORE_INIT==true){
 		if(defined($name)){
 			trigger_error('Previously Defined Constant: ' . $name, E_USER_WARNING);
 			return FALSE;
@@ -164,19 +164,19 @@ _define('DS',DIRECTORY_SEPARATOR, '/'); // Shorter name for the php constant DIR
 _define('EOL', PHP_EOL); // Shorter name for the php constant PHP_EOL (End of line);
 
 // Moving to /cleverweb/init.php
-_define('REQUEST_URL', trim($_GET['url'],'/')); // Get the requested URL for parsing later.
+//_define('REQUEST_URL', trim($_GET['url'],'/')); // Get the requested URL for parsing later.
 _define('REQUEST_METHOD', $_SERVER['REQUEST_METHOD']);
 _define('IS_POST', (REQUEST_METHOD === 'POST'));
 _define('IS_GET', (REQUEST_METHOD === 'GET'));
 
 // Moving to /cleverweb/init.php
-$_CW->preinit['db_conn'] = new mysqli(
-	(string) $MySQL_Host,
-	(string) $MySQL_Name,
-	(string) $MySQL_Username,
-	(string) $MySQL_Password
-);
-unset($MySQL_Host,$MySQL_Name,$MySQL_Password,$MySQL_Username);
+//$_CW->preinit['db_conn'] = new mysqli(
+//	(string) $MySQL_Host,
+//	(string) $MySQL_Name,
+//	(string) $MySQL_Username,
+//	(string) $MySQL_Password
+//);
+//unset($MySQL_Host,$MySQL_Name,$MySQL_Password,$MySQL_Username);
 /**
  * MySQLi tables list:
  * 	Settings
@@ -263,7 +263,7 @@ unset($_CW->preinit['temp'],$_CW->preinit['arrayvalue'],$_CW->preinit['i'],$_CW-
 // END find CW core
 
 
-include_once $_CW->preinit['path'].DS.'init.php' // (init the core)
+include_once $_CW->preinit['path'].DS.'init.php'; // (init the core)
 
 
 //EOF
