@@ -289,11 +289,11 @@ class init implements versions{
  * Start init.
  */
 $_CW->init = new init;
-$_CW->init->add_folder('/this/path');
 
+require_once __DIR__.DS.'loader.php';
 
+// autoload
 
-
-
+// end
 
 ?>

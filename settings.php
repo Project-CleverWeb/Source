@@ -11,16 +11,16 @@
  */
 
 // database username
-$MySQL_Username = "default";
+$MySQL_Username = "root";
 
 // database password
-$MySQL_Password = "default";
+$MySQL_Password = "";
 
 // database name
-$MySQL_Name = "default";
+$MySQL_Name = "cw-framework";
 
 // database host
-$MySQL_Host = "default";
+$MySQL_Host = "localhost";
 
 
 
@@ -164,19 +164,19 @@ _define('DS',DIRECTORY_SEPARATOR, '/'); // Shorter name for the php constant DIR
 _define('EOL', PHP_EOL); // Shorter name for the php constant PHP_EOL (End of line);
 
 // Moving to /cleverweb/init.php
-//_define('REQUEST_URL', trim($_GET['url'],'/')); // Get the requested URL for parsing later.
+_define('REQUEST_URI', trim($_SERVER['REQUEST_URI'],'/')); // Get the requested URL for parsing later.
 _define('REQUEST_METHOD', $_SERVER['REQUEST_METHOD']);
 _define('IS_POST', (REQUEST_METHOD === 'POST'));
 _define('IS_GET', (REQUEST_METHOD === 'GET'));
 
 // Moving to /cleverweb/init.php
-//$_CW->preinit['db_conn'] = new mysqli(
-//	(string) $MySQL_Host,
-//	(string) $MySQL_Name,
-//	(string) $MySQL_Username,
-//	(string) $MySQL_Password
-//);
-//unset($MySQL_Host,$MySQL_Name,$MySQL_Password,$MySQL_Username);
+$_CW->preinit['db_conn'] = new mysqli(
+	(string) $MySQL_Host,
+	(string) $MySQL_Username,
+	(string) $MySQL_Password,
+	(string) $MySQL_Name
+);
+unset($MySQL_Host,$MySQL_Name,$MySQL_Password,$MySQL_Username);
 /**
  * MySQLi tables list:
  * 	Settings
