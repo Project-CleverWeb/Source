@@ -1,4 +1,4 @@
-<?php
+<pre><?php
 // should be the only file needed, file will change in the future
 include __DIR__.'/settings.php';
 $_CW->init(

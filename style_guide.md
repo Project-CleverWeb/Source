@@ -6,11 +6,11 @@
 **Rules**
 
 * Any IDE, is acceptable, except Adobe Dreamweaver. Developers caught using Dreamweaver will be forced to use notepad for a week. The only alternative punishment is being shot with rock-salt.
-* Any OS is acceptable, and
+* Any OS is acceptable.
 
 **Why**
 
-* 
+* Dreamweaver is slow and has little functionality compaired to most IDEs. Whatever OS a developer chooses,
 
 ###Spacing###
 **Rules**

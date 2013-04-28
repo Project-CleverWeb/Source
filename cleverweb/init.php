@@ -37,11 +37,11 @@ define("CW_DEBUG_LEVEL",$_CW->preinit['debug_level'],TRUE);
 class init implements versions{
 	
 	// init lists
-	protected $folders;
+	protected $internals;
+	protected $libs;
 	protected $plugins;
-	protected $sets;
-	protected $classes;
-	protected $functions;
+	protected $theme;
+	protected $configs;
 	
 	
 	
@@ -141,7 +141,7 @@ class init implements versions{
 		
 	}
 	public function add_plugin($name,$options=NULL){
-		// cannot start before some core systems
+		
 	}
 	public function add_class($name,$options=NULL){
 		
@@ -245,40 +245,54 @@ class init implements versions{
 	}
 	
 	/**
+	 * Configs
+	 */
+	public function get_config($path){
+		// load an additional config file
+	}
+	private function get_configs(){
+		// get configs for scope
+	}
+	
+	/**
 	 * Loaders
 	 */
-	protected function load_internals(){
+	public function load_internals(){
 		$this->chng_scope();
 		static $loaded;
 		if($loaded===TRUE){
 			return FALSE; // [comeback] silent error for attempting to load twice?
 		}
+		$this->get_configs();
 		// load paths from arrays;
 	}
-	protected function load_libs(){
+	public function load_libs(){
 		static $loaded;
 		if($loaded===TRUE){
 			return FALSE; // [comeback] silent error for attempting to load twice?
 		}
 		$this->chng_scope('LIBS'); // limit perms
+		$this->get_configs();
 		// load paths from arrays;
 		$this->chng_scope(); // return control of internals
 	}
-	protected function load_plugins(){
+	public function load_plugins(){
 		static $loaded;
 		if($loaded===TRUE){
 			return FALSE; // [comeback] silent error for attempting to load twice?
 		}
 		$this->chng_scope('PLUGINS'); // limit perms
+		$this->get_configs();
 		// load paths from arrays;
 		$this->chng_scope(); // return control of internals
 	}
-	protected function load_theme(){
+	public function load_theme(){
 		static $loaded;
 		if($loaded===TRUE){
 			return FALSE; // [comeback] silent error for attempting to load twice?
 		}
 		$this->chng_scope('THEME'); // limit perms
+		$this->get_configs();
 		// send arrays to theme handler
 		$this->chng_scope(); // return control of internals
 	}
@@ -295,5 +309,4 @@ require_once __DIR__.DS.'loader.php';
 // autoload
 
 // end
-
 ?>

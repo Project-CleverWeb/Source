@@ -14,10 +14,6 @@ $_CW->init->add_plugin('this-key','/this/path',1);
 $_CW->init->add_class('this-key','/this/path',1);
 $_CW->init->add_set('this-key','/this/path',1);
 
-
-// [comeback] load configs
-$_CW->init->load_configs(); // these will modify the queue accordingly
-
 // load everything
 $_CW->init->load_internals();
 $_CW->init->load_libs();
